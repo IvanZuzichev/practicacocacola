@@ -1,0 +1,75 @@
+﻿<Page x:Class="practica.BuyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:practica"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BuyPage">
+
+    <Grid Background="red">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Информация чека" x:Name="infotxt" FontSize="27" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="datatxt" Background="Red" FontSize="17" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="1"/>
+        <ComboBox x:Name="nameuser" Grid.Row="0" Grid.Column="2"/>
+        <TextBox x:Name="costtxt" Background="Red" FontSize="17" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="3"/>
+        
+        <DataGrid x:Name="InfoCheckGrid" Grid.Row="1" Grid.Column="0" SelectionChanged="InfoCheckGrid_SelectionChanged"/>
+        <Button x:Name="JButton" Content="Импорт данных" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" Grid.Row="2" Grid.Column="0" Width="267" Click="JButton_Click"/>
+        <TextBlock Text="Создание чека" x:Name="checktxt" FontSize="27" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="5"/>
+        <DataGrid x:Name="CheckGrid" Grid.Row="1" Grid.Column="5"/>
+        <Button x:Name="MakeCheckButton" Content="Регистрация" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" Grid.Row="2" Grid.Column="5" Width="266" Click="MakeCheckButton_Click"/>
+        <TextBox x:Name="cost" FontSize="10" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="2"  Grid.Column="3"/>
+        <TextBlock FontSize="17" Text="Итог:" Background="Red"  Foreground="White" FontWeight="Bold" Grid.Row="2"  Grid.Column="1"/>
+        <TextBlock x:Name="costFinal" FontSize="17" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="2"  Grid.Column="2"/>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="24*"/>
+                <ColumnDefinition Width="65*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="idChecktxt" Background="Red" FontSize="17" Foreground="White" FontWeight="Bold" Grid.Row="0"  Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,0,116"/>
+            <ComboBox x:Name="idCheckBox" Grid.Row="1"  Grid.RowSpan="1" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="idProductBox" Grid.Row="1"  Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,116,0,0"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="addinfo" Content="Добавить" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="0"  Grid.RowSpan="1" Width="89" Click="addinfo_Click"/>
+            <Button x:Name="delinfo" Content="Удалить" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="1"  Grid.RowSpan="1" Width="89" Click="delinfo_Click"/>
+            <Button x:Name="reminfo" Content="Изменить" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="2"  Grid.RowSpan="2" Width="89" Click="reminfo_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="addcheck" Content="Добавить" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="0"  Grid.RowSpan="1" Width="89" Click="addcheck_Click"/>
+            <Button x:Name="delcheck" Content="Удалить" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="1"  Grid.RowSpan="1" Width="89" Click="delcheck_Click"/>
+            <Button x:Name="remcheck" Content="Изменить" HorizontalAlignment="Center" FontSize="10" Background="Red" Foreground="White" FontWeight="Bold" Grid.Row="2"  Grid.RowSpan="2" Width="89" Click="remcheck_Click"/>
+
+        </Grid>
+    </Grid>
+</Page>
